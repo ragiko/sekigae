@@ -3,17 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-    <style>
-        .container {
-            width: 960px;
-            background: red;
-        }
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/html5reset.css" media="all">
+    <style type="text/css">
+    /* box sizing */
+    *, *:before, *:after {
+      -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    .container {
+        width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+
+        /* clearfix */
+        overflow: hidden;
+        *zoom: 1;
+    }
+    .row {
+        width: 100%;
+    }
+    .row > * {
+        float: left;
+    }
+    .span-1-of-5 {
+        width: 20%;
+        padding: 10px;
+    }
+    .span-1-of-5 > .table {
+        float: left;
+    }
+    .table {
+        width: 50%;
+        height: 200px;
+        border: solid 1px black;
+        margin-bottom: 10px;
+    }    
+    .billiard-table {
+        height: 400px;
+        border: solid 1px black;
+    }
+    .ball {
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 100px;
+        width: 100px;
+        height: 100px;
+    }
+    #ball-1 {
+        background-color: #f1c40f;
+    }
+    #ball-2 {
+        background-color: #2ecc71;
+    }
     </style>
 </head>
+<!-- ポケット穴の感じ -->
 <body>
     <div class="container">
-        
+        <div class="row">
+            <div class="span-1-of-5">
+                <div id="table-1" class="table"></div>
+                <div class="table"></div>
+            </div>
+            <div class="span-1-of-5">
+                <div id="table-2" class="table"></div>
+                <div class="table"></div>
+            </div>
+            <div class="span-1-of-5">
+                <div class="billiard-table">
+                    <div id="ball-1" class="ball"></div>
+                    <div id="ball-2" class="ball">fewa</div>
+                </div>
+            </div>
+            <div class="span-1-of-5">
+                <div class="table"></div>
+                <div class="table"></div>
+            </div>
+            <div class="span-1-of-5">
+                <div class="table"></div>
+                <div class="table"></div>
+            </div>
+        </div>
     </div>
+    <button class="button1">ball-1 move!!</button>
+    <button class="button2">ball-2 move!!</button>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>
