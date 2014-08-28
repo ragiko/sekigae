@@ -1,57 +1,42 @@
 $(function () {
 
-    $(".button1").on("click", function () {
+    'use strict';
 
-        var top = $("#table-1").position().top;
-        var left = $("#table-1").position().left;
-        var width = $("#table-1").width();
-        var height = $("#table-1").height();
-        var tableCenterPt = {
-            x: left + width/2,
-    y: top + height/2,
-        }
+    var Table = function (tableId) {
+        this.id = tableId;
+        this.centerPt = {
+            x: $("#table-"+this.id).position().left + $("#table-"+this.id).width()/2,
+            y: $("#table-"+this.id).position().top + $("#table-"+this.id).height()/2,
+        };
+    };
 
-        // init
-        var position = $("#ball-1").position();
-
-        $("#ball-1").css({
-            top: position.top,
-            left: position.left,
-            position: 'absolute', 
-        });
-
-
-        // ball move
-        $("#ball-1").animate({
-            'top': (tableCenterPt.y - $("#ball-1").height()/2) + 'px',
-            'left': (tableCenterPt.x - $("#ball-1").height()/2) + 'px',
-        });
-    });
-
-    $(".button2").on("click", function () {
-
-        var top = $("#table-2").position().top;
-        var left = $("#table-2").position().left;
-        var width = $("#table-2").width();
-        var height = $("#table-2").height();
-        var tableCenterPt = {
-            x: left + width/2,
-            y: top + height/2,
-        }
+    var Ball = function (ballId) {
+        this.id = ballId;
+        var $ball = $("#ball-"+this.id);
 
         // init
-        var position = $("#ball-2").position();
-
-        $("#ball-2").css({
-            top: position.top,
-            left: position.left,
+        $ball.css({
+            top: $ball.position().top,
+            left: $ball.position().left,
             position: 'absolute', 
         });
+    };
 
-        // ball move
-        $("#ball-2").animate({
-            'top': (tableCenterPt.y - $("#ball-1").height()/2) + 'px',
-            'left': (tableCenterPt.x - $("#ball-1").height()/2) + 'px',
+    Ball.prototype.moveTo = function(table) {
+        var $ball = $("#ball-"+this.id);
+        console.log($ball);
+
+        $ball.animate({
+            'top': (table.centerPt.y - $ball.height()/2) + 'px',
+            'left': (table.centerPt.x - $ball.width()/2) + 'px',
         });
+    };
+
+    $(".start").on("click", function () {
+        var table = new Table(1);
+        var ball = new Ball(1);
+
+        ball.moveTo(table);
     });
+
 });
