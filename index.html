@@ -6,10 +6,25 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/html5reset.css" media="all">
+    <link rel="stylesheet" href="css/animate.css" media="all">
     <style type="text/css">
     /* box sizing */
     *, *:before, *:after {
       -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    .button-wrap {
+        text-align: center;
+    }
+    button {
+        width: 40%;
+        font-size: 1.4em;
+        font-weight: bold;
+        padding: 10px 30px;
+        background-color: #e74c3c;
+        color: #fff;
+        border-style: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     .container {
         width: 960px;
@@ -85,7 +100,7 @@
         background-color: #9b59b6;
     }
     #ball-5 {
-        background-color: #16a085;
+        background-color: #95a5a6;
     }
     #ball-6 {
         background-color: #16a085;
@@ -100,7 +115,7 @@
         background-color: #8e44ad;
     }
     #ball-10 {
-        background-color: #f39c12;
+        background-color: #27ae60;
     }
     #ball-11 {
         background-color: #f1c40f;
@@ -132,14 +147,18 @@
     #ball-20 {
         background-color: #f39c12;
     }
+    .start {
+        -vendor-animation-iteration-count: infinite;
+    }
 
     </style>
 </head>
 <!-- ポケット穴の感じ -->
 <body>
     <div class="container">
-        <button class="start">start</button>
-        <button class="stop">stop</button>
+        <div class="button-wrap">
+            <button class="start">start</button>
+        </div>
         <div class="row">
             <!-- row -->
             <div class="span-1-of-4">

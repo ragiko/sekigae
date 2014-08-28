@@ -59,20 +59,39 @@ $(function () {
     var intervalID;
 
     $(".start").on("click", function () {
-        ballsMove();
-        intervalID = setInterval(ballsMove, 500);
+        $(this).toggleClass("startClicked");
 
-        // 音楽再生
-        $("#mery")[0].play();
-    });
+        // start
+        if ($(this).hasClass("startClicked")) {
+            // DOM変更
+            $(this)
+                .text("stop")
+                .css({"background-color": "#2980b9"});
 
-    $(".stop").on("click", function () {
-        clearInterval(intervalID);
-
-        // 音楽再生
-        $("#mery")[0].pause();
-        $("#finish")[0].play();
-
+            $(".ball").removeClass("animated pulse");
+    
+            // Timer
+            ballsMove();
+            intervalID = setInterval(ballsMove, 500);
+    
+            // 音楽再生
+            $("#mery")[0].play();
+        // stop
+        } else {
+            // DOM変更 
+            $(this)
+                .text("start")
+                .css({"background-color": "#e74c3c"})
+                
+            $(".ball").addClass("animated pulse");
+                               
+            // Timer削除
+            clearInterval(intervalID);
+    
+            // 音楽再生
+            $("#mery")[0].pause();
+            $("#finish")[0].play();
+        }
     });
 
 });
