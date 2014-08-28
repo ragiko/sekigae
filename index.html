@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- -->
     <meta charset="UTF-8">
     <title></title>
 
@@ -38,26 +37,40 @@
     .table {
         width: 50%;
         height: 90px;
-        border: solid 1px black;
-        margin-bottom: 10px;
+        border: solid 3px white;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        border-radius: 15px;
+        margin-bottom: 3px;
+        background-image: url("./img/table.jpeg");
     }    
     .no-table {
         height: 90px;
-        margin-bottom: 10px;
+        margin-bottom: 3px;
     }    
     .balls {
-        border: solid 1px black;
+        /* clearfix */
+        overflow: hidden;
+        *zoom: 1;
+        
+        padding: 20px;
     }
     .balls > * {
         float: left;
     }
     .ball {
-        -moz-border-radius: 20px;
-        -webkit-border-radius: 20px;
-        border-radius: 90px;
-        width: 90px;
-        height: 90px;
+        -moz-border-radius: 80px;
+        -webkit-border-radius: 80px;
+        border-radius: 80px;
+        width: 80px;
+        height: 80px;
         background-color: #f1c40f;
+        border: solid;
+
+        text-align: center;
+        padding-top: 21px;
+        font-size: 18px;
+        font-weight: bold;
     }
     #ball-1 {
         background-color: #f1c40f;
@@ -126,6 +139,7 @@
 <body>
     <div class="container">
         <button class="start">start</button>
+        <button class="stop">stop</button>
         <div class="row">
             <!-- row -->
             <div class="span-1-of-4">
@@ -178,30 +192,35 @@
             <div class="span-1-of-4">
                 <div class="no-table"></div>
             </div>
-
         </div>
         <div class="balls">
-            <div id="ball-1" class="ball"></div>
-            <div id="ball-2" class="ball"></div>
-            <div id="ball-3" class="ball"></div>
-            <div id="ball-4" class="ball"></div>
-            <div id="ball-5" class="ball"></div>
-            <div id="ball-6" class="ball"></div>
-            <div id="ball-7" class="ball"></div>
-            <div id="ball-8" class="ball"></div>
-            <div id="ball-9" class="ball"></div>
-            <div id="ball-10" class="ball"></div>
-            <div id="ball-11" class="ball"></div>
-            <div id="ball-12" class="ball"></div>
-            <div id="ball-13" class="ball"></div>
-            <div id="ball-14" class="ball"></div>
-            <div id="ball-15" class="ball"></div>
-            <div id="ball-16" class="ball"></div>
-            <div id="ball-17" class="ball"></div>
-            <div id="ball-18" class="ball"></div>
-            <div id="ball-19" class="ball"></div>
-            <div id="ball-20" class="ball"></div>
+            <div id="ball-1" class="ball">aka-max</div>
+            <div id="ball-2" class="ball">keta</div>
+            <div id="ball-3" class="ball">GOD!!</div>
+            <div id="ball-4" class="ball">yuta</div>
+            <div id="ball-5" class="ball">takubo</div>
+            <div id="ball-6" class="ball">sa<br>chaos</div>
+            <div id="ball-7" class="ball">sassa</div>
+            <div id="ball-8" class="ball">doya</div>
+            <div id="ball-9" class="ball">genki</div>
+            <div id="ball-10" class="ball">shiho<br>shi</div>
+            <div id="ball-11" class="ball">don-chan</div>
+            <div id="ball-12" class="ball">koki</div>
+            <div id="ball-13" class="ball">hashi<br>moto</div>
+            <div id="ball-14" class="ball">kanu</div>
+            <div id="ball-15" class="ball">bino</div>
+            <div id="ball-16" class="ball">takeshi</div>
+            <div id="ball-17" class="ball">misshi</div>
+            <div id="ball-18" class="ball">chi</div>
+            <div id="ball-19" class="ball">miwa</div>
+            <div id="ball-20" class="ball">yan<br>way</div>
         </div>
+        <audio id="mery" loop>
+            <source src="./music/mery.mp3">
+        </audio>
+        <audio id="finish">
+            <source src="./music/finish.mp3">
+        </audio>
     </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>

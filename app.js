@@ -24,7 +24,6 @@ $(function () {
 
     Ball.prototype.moveTo = function(table) {
         var $ball = $("#ball-"+this.id);
-        console.log($ball);
 
         $ball.animate({
             'top': (table.centerPt.y - $ball.height()/2) + 'px',
@@ -32,7 +31,9 @@ $(function () {
         });
     };
 
-    $(".start").on("click", function () {
+    
+
+    function ballsMove() {
         // init
         var tables = [];
         var balls = [];
@@ -50,8 +51,28 @@ $(function () {
         }
 
         $.each(ballsToTables, function () {
-            console.log(this[0]-1 + "," + this[1]-1);
             balls[this[0]-1].moveTo(tables[this[1]-1]);
         });
+    }
+
+    // 定期実行
+    var intervalID;
+
+    $(".start").on("click", function () {
+        ballsMove();
+        intervalID = setInterval(ballsMove, 500);
+
+        // 音楽再生
+        $("#mery")[0].play();
     });
+
+    $(".stop").on("click", function () {
+        clearInterval(intervalID);
+
+        // 音楽再生
+        $("#mery")[0].pause();
+        $("#finish")[0].play();
+
+    });
+
 });
