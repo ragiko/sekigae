@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- -->
     <meta charset="UTF-8">
     <title></title>
 
@@ -27,29 +28,36 @@
     .row > * {
         float: left;
     }
-    .span-1-of-5 {
-        width: 20%;
+    .span-1-of-4 {
+        width: 25%;
         padding: 10px;
     }
-    .span-1-of-5 > .table {
+    .span-1-of-4 > .table {
         float: left;
     }
     .table {
         width: 50%;
-        height: 200px;
+        height: 90px;
         border: solid 1px black;
         margin-bottom: 10px;
     }    
-    .billiard-table {
-        height: 400px;
+    .no-table {
+        height: 90px;
+        margin-bottom: 10px;
+    }    
+    .balls {
         border: solid 1px black;
+    }
+    .balls > * {
+        float: left;
     }
     .ball {
         -moz-border-radius: 20px;
         -webkit-border-radius: 20px;
-        border-radius: 100px;
-        width: 100px;
-        height: 100px;
+        border-radius: 90px;
+        width: 90px;
+        height: 90px;
+        background-color: #f1c40f;
     }
     #ball-1 {
         background-color: #f1c40f;
@@ -57,40 +65,146 @@
     #ball-2 {
         background-color: #2ecc71;
     }
+    #ball-3 {
+        background-color: #3498db;
+    }
+    #ball-4 {
+        background-color: #9b59b6;
+    }
+    #ball-5 {
+        background-color: #34495e;
+    }
+    #ball-6 {
+        background-color: #16a085;
+    }
+    #ball-7 {
+        background-color: #27ae60;
+    }
+    #ball-8 {
+        background-color: #2980b9;
+    }
+    #ball-9 {
+        background-color: #8e44ad;
+    }
+    #ball-10 {
+        background-color: #2c3e50;
+    }
+    #ball-11 {
+        background-color: #f1c40f;
+    }
+    #ball-12 {
+        background-color: #e67e22;
+    }
+    #ball-13 {
+        background-color: #e74c3c;
+    }
+    #ball-14 {
+        background-color: #ecf0f1;
+    }
+    #ball-15 {
+        background-color: #95a5a6;
+    }
+    #ball-16 {
+        background-color: #f39c12;
+    }
+    #ball-17 {
+        background-color: #e74c3c;
+    }
+    #ball-18 {
+        background-color: #ecf0f1;
+    }
+    #ball-19 {
+        background-color: #95a5a6;
+    }
+    #ball-20 {
+        background-color: #f39c12;
+    }
+
     </style>
 </head>
 <!-- ポケット穴の感じ -->
 <body>
     <div class="container">
+        <button class="start">start</button>
         <div class="row">
-            <div class="span-1-of-5">
+            <!-- row -->
+            <div class="span-1-of-4">
                 <div id="table-1" class="table"></div>
-                <div class="table"></div>
-            </div>
-            <div class="span-1-of-5">
                 <div id="table-2" class="table"></div>
-                <div class="table"></div>
             </div>
-            <div class="span-1-of-5">
-                <div class="billiard-table">
-                    <div id="ball-1" class="ball"></div>
-                    <div id="ball-2" class="ball">fewa</div>
-                </div>
+            <div class="span-1-of-4">
+                <div id="table-3" class="table"></div>
+                <div id="table-4" class="table"></div>
             </div>
-            <div class="span-1-of-5">
-                <div class="table"></div>
-                <div class="table"></div>
+            <div class="span-1-of-4">
+                <div id="table-5" class="table"></div>
+                <div id="table-6" class="table"></div>
             </div>
-            <div class="span-1-of-5">
-                <div class="table"></div>
-                <div class="table"></div>
+            <div class="span-1-of-4">
+                <div id="table-7" class="table"></div>
+                <div id="table-8" class="table"></div>
             </div>
+
+            <!-- row -->
+            <div class="span-1-of-4">
+                <div id="table-9" class="table"></div>
+                <div id="table-10" class="table"></div>
+            </div>
+            <div class="span-1-of-4">
+                <div id="table-11" class="table"></div>
+                <div id="table-12" class="table"></div>
+            </div>
+            <div class="span-1-of-4">
+                <div id="table-13" class="table"></div>
+                <div id="table-14" class="table"></div>
+            </div>
+            <div class="span-1-of-4">
+                <div id="table-15" class="table"></div>
+                <div id="table-16" class="table"></div>
+            </div>
+
+            <!-- row -->
+            <div class="span-1-of-4">
+                <div class="no-table"></div>
+            </div>
+            <div class="span-1-of-4">
+                <div id="table-17" class="table"></div>
+                <div id="table-18" class="table"></div>
+            </div>
+            <div class="span-1-of-4">
+                <div id="table-19" class="table"></div>
+                <div id="table-20" class="table"></div>
+            </div>
+            <div class="span-1-of-4">
+                <div class="no-table"></div>
+            </div>
+
+        </div>
+        <div class="balls">
+            <div id="ball-1" class="ball"></div>
+            <div id="ball-2" class="ball"></div>
+            <div id="ball-3" class="ball"></div>
+            <div id="ball-4" class="ball"></div>
+            <div id="ball-5" class="ball"></div>
+            <div id="ball-6" class="ball"></div>
+            <div id="ball-7" class="ball"></div>
+            <div id="ball-8" class="ball"></div>
+            <div id="ball-9" class="ball"></div>
+            <div id="ball-10" class="ball"></div>
+            <div id="ball-11" class="ball"></div>
+            <div id="ball-12" class="ball"></div>
+            <div id="ball-13" class="ball"></div>
+            <div id="ball-14" class="ball"></div>
+            <div id="ball-15" class="ball"></div>
+            <div id="ball-16" class="ball"></div>
+            <div id="ball-17" class="ball"></div>
+            <div id="ball-18" class="ball"></div>
+            <div id="ball-19" class="ball"></div>
+            <div id="ball-20" class="ball"></div>
         </div>
     </div>
-    <button class="button1">ball-1 move!!</button>
-    <button class="button2">ball-2 move!!</button>
-    <button class="start">start</button>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>

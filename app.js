@@ -33,10 +33,25 @@ $(function () {
     };
 
     $(".start").on("click", function () {
-        var table = new Table(1);
-        var ball = new Ball(1);
+        // init
+        var tables = [];
+        var balls = [];
 
-        ball.moveTo(table);
+        var tableIds = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+        var ballIds = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+
+        // random
+        ballIds = _.shuffle(ballIds);
+        var ballsToTables = _.zip(ballIds, tableIds);
+
+        for (var i = 1; i <= tableIds.length; i++) {
+            tables.push(new Table(i));
+            balls.push(new Ball(i));
+        }
+
+        $.each(ballsToTables, function () {
+            console.log(this[0]-1 + "," + this[1]-1);
+            balls[this[0]-1].moveTo(tables[this[1]-1]);
+        });
     });
-
 });
